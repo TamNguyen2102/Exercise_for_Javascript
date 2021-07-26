@@ -2,12 +2,8 @@
 let firtName = "Tam",
   lastName = "Nguyen";
 
-console.log(firtName, lastName);
-
 // Constant
 const number1 = 3;
-
-console.log(number1);
 
 // Primative Type
 let name = "Tam";
@@ -22,18 +18,76 @@ let person = {
   age: 22,
 };
 
-person["age"] = 25;
+const student = {
+  name: null,
+  age: null,
+};
+student.age = age;
 
-console.log(person);
-console.log(person.age);
+person["age"] = 25;
 
 //Array
 let color = ["blue", "red"];
 color[2] = 2;
-console.log(color);
 
 //Function
 function greet(name) {
   console.log("Hello " + name);
 }
-greet("Tam");
+
+//Loop:-----------
+const todoList = [
+  {
+    id: 1,
+    activity: "Learn Javascript basic",
+    isCompleted: true,
+  },
+  {
+    id: 2,
+    activity: "Brush teeth",
+    isCompleted: true,
+  },
+  {
+    id: 3,
+    activity: "Do the exercises",
+    isCompleted: false,
+  },
+];
+
+// //For
+// for (let index = 0; index < todoList.length; index++) {
+//   console.log(todoList[index]);
+// }
+
+// for (let i = 0; i < 5; i++) {
+//   console.log(`Loop:  ${i}`);
+// }
+
+// //While
+// let i = 0;
+// while (i < 5) {
+//   console.log(`While in loop number: ${i}`);
+//   i++;
+// }
+
+// //forEach
+// todoList.forEach(function (todo) {
+//   console.log(todo.activity);
+// });
+
+//map
+const todoActivity = todoList.map(function (todo) {
+  return todo.activity;
+});
+
+//filter
+
+const todoText = todoList
+  .filter(function (todo) {
+    return todo.isCompleted === true;
+  })
+  .map((todo) => {
+    return todo.id;
+  });
+
+console.log(todoText);
