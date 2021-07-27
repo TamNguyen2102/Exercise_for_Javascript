@@ -90,22 +90,4 @@ const todoText = todoList
     return todo.id;
   });
 
-//Switch case
-todoText.forEach((stage) => {
-  switch (stage) {
-    case stage === 1:
-      console.log("This is one");
-      break;
-    case stage === 2:
-      console.log("This is two");
-      break;
-    default:
-      console.log("Number one is number two");
-      break;
-  }
-});
-
-for (i = 0; i < todoText.length; i++) {
-  if (todoText[i] === 1) console.log("This is one");
-  else console.log("This is two");
-}
+console.log(todoText);
