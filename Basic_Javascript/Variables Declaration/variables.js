@@ -24,3 +24,19 @@ const constVaraiable = "This is const";
 const person = { name: "Tam" };
 person.name = "Nhu"; //If variable is an object, const variable can change the properties of the object
 console.log(person);
+
+//DOM Traverse
+const heading = document.querySelector("h1");
+
+heading.addEventListener("click", () => {
+  heading.style.color = "red";
+});
+
+const container = document.querySelector(".container");
+const children = document.querySelectorAll(".child");
+
+children.forEach((child) => {
+  child.addEventListener("click", () => {
+    container.classList.toggle("active");
+  });
+});
