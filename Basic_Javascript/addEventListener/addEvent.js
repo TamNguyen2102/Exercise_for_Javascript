@@ -29,3 +29,17 @@ function greet() {
 setTimeout(() => {
   child.removeEventListener("click", greet);
 }, 2000);
+
+//Progress Bar
+const progressBar = document.querySelector(".progress-bar");
+
+child.addEventListener("click", () => {
+  let setIntervalID = setInterval(() => {
+    const progressBarStyle = getComputedStyle(progressBar);
+    const width = parseFloat(progressBarStyle.getPropertyValue("--width")) || 0;
+    progressBar.style.setProperty("--width", width + 0.2);
+    console.log(width);
+
+    if (width > 100) clearInterval(setIntervalID);
+  }, 5);
+});
