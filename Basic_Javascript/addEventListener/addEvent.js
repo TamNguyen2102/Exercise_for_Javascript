@@ -40,6 +40,14 @@ child.addEventListener("click", () => {
     progressBar.style.setProperty("--width", width + 0.2);
     console.log(width);
 
-    if (width > 100) clearInterval(setIntervalID);
+    if (width > 100) {
+      clearInterval(setIntervalID);
+    }
   }, 5);
 });
+
+function returnWidth() {
+  return true;
+}
+
+if (maxWidth === true) console.log("Hello Tam");
