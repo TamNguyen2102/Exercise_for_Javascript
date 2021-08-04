@@ -38,7 +38,7 @@ child.addEventListener("click", () => {
     const progressBarStyle = getComputedStyle(progressBar);
     const width = parseFloat(progressBarStyle.getPropertyValue("--width")) || 0;
     progressBar.style.setProperty("--width", width + 0.2);
-    console.log(width);
+    console.log(`Progress at: ${width}%`);
 
     if (width > 100) {
       clearInterval(setIntervalID);
@@ -50,4 +50,4 @@ function returnWidth() {
   return true;
 }
 
-if (maxWidth === true) console.log("Hello Tam");
+// if (maxWidth === true) console.log("Hello Tam");
