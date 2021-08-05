@@ -33,7 +33,7 @@ function greeting2() {
 greeting1(greeting2);
 
 //Example 4:
-debugger;
+
 const items = [
   { name: "Item 1", type: "Book" },
   {
@@ -68,3 +68,35 @@ function createItem(item, callback) {
 createItem({ name: "Item 3", type: "Ps4" }, () => {
   getItem(deleteItem);
 }); //This is callback problem: Callback in callback - Callback hell
+
+//Example 5
+const userLeft = false;
+const userWatchingTutorial = false;
+
+function watchingCallBackTutorial(callback, errorCallback) {
+  if (userLeft) {
+    errorCallback({
+      name: "User",
+      message: "Left",
+    });
+  } else if (userWatchingTutorial) {
+    callback({
+      name: "User",
+      message: "Watching Callback",
+    });
+  } else {
+    errorCallback({
+      name: "User",
+      message: "Playing games and stop coding",
+    });
+  }
+}
+
+watchingCallBackTutorial(
+  (message) => {
+    console.log(`Success: ${message.name} ${message.message}`);
+  },
+  (error) => {
+    console.log(`Fail: ${error.name} ${error.message}`);
+  }
+);
