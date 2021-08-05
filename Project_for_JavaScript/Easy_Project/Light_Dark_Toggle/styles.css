@@ -1,0 +1,100 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  --accent-color: orangered;
+  --background-color: #fff;
+  --text-color: black;
+  --button-text-color: var(--background-color);
+  --transition-delay: 1s;
+
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color, color, var(--transition-delay);
+}
+
+body.dark {
+  --background-color: black;
+  --text-color: #fff;
+  --accent-color: #d0d066;
+}
+
+/* Heading */
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+/* Button */
+.swap-button {
+  background-color: var(--accent-color);
+  color: var(--button-text-color);
+  border-radius: 5px;
+  transform: scale(1);
+  transition: color, transform, var(--transition-delay);
+
+  padding: 0.75rem 2.5rem;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swap-button:hover,
+.swap-button:focus {
+  transform: scale(1.1);
+}
+
+/* Button Icon */
+.button-icon {
+  height: 50px;
+  width: 50px;
+  margin-right: 1rem;
+  fill: var(--button-text-color);
+  transition: fill var(--transition-delay);
+}
+/* Button name */
+.button-name {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+/* Moon and Sun container */
+.light-dark-container {
+  --rotation: 0;
+  height: 250vmin;
+  position: absolute;
+  top: 5%;
+
+  transition: transform, fill, var(--transition-delay);
+  transform: rotate(calc(var(--rotation) * 1deg));
+  pointer-events: none;
+}
+
+/* Moon */
+.moon {
+  position: absolute;
+  bottom: 0;
+  fill: var(--accent-color);
+  transition: fill var(--transition-delay);
+}
+/* Sun */
+.sun {
+  top: 5%;
+  fill: var(--accent-color);
+  transition: fill var(--transition-delay);
+}
