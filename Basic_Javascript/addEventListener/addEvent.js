@@ -22,6 +22,7 @@ parent.addEventListener("click", () => {
 });
 
 child.addEventListener("click", greet);
+
 //Child class - Event
 function greet() {
   console.log("Hello world");
@@ -34,20 +35,34 @@ setTimeout(() => {
 const progressBar = document.querySelector(".progress-bar");
 
 child.addEventListener("click", () => {
+  progressing(callback);
+});
+
+function progressing(callback) {
   let setIntervalID = setInterval(() => {
     const progressBarStyle = getComputedStyle(progressBar);
     const width = parseFloat(progressBarStyle.getPropertyValue("--width")) || 0;
-    progressBar.style.setProperty("--width", width + 0.2);
+    progressBar.style.setProperty("--width", width + 0.3);
     console.log(`Progress at: ${width}%`);
 
     if (width > 100) {
       clearInterval(setIntervalID);
+      callback();
     }
   }, 5);
-});
-
-function returnWidth() {
-  return true;
 }
 
+function callback() {
+  setTimeout(() => {
+    let setIntervalCallBack = setInterval(() => {
+      const progressBarStyle = getComputedStyle(progressBar);
+      const width =
+        parseFloat(progressBarStyle.getPropertyValue("--width")) || 0;
+      progressBar.style.setProperty("--width", width - 0.2);
+      console.log(`Progress at: ${width}%`);
+
+      if (width < 0) clearInterval(setIntervalCallBack);
+    }, 5);
+  }, 5000);
+}
 // if (maxWidth === true) console.log("Hello Tam");
