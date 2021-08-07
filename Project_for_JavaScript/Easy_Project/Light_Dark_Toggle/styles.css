@@ -43,6 +43,8 @@ h1 {
   background-color: var(--accent-color);
   color: var(--button-text-color);
   border-radius: 5px;
+  border: none;
+  outline: none;
   transform: scale(1);
   transition: color, transform, var(--transition-delay);
 
@@ -78,23 +80,35 @@ h1 {
   --rotation: 0;
   height: 250vmin;
   position: absolute;
-  top: 5%;
+  top: 0;
 
-  transition: transform, fill, var(--transition-delay);
+  transition: all var(--transition-delay);
   transform: rotate(calc(var(--rotation) * 1deg));
   pointer-events: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Moon */
 .moon {
   position: absolute;
-  bottom: 0;
+  bottom: 2%;
+  transition: all var(--transition-delay);
   fill: var(--accent-color);
-  transition: fill var(--transition-delay);
+}
+.dark .moon {
+  opacity: 1;
 }
 /* Sun */
 .sun {
-  top: 5%;
+  opacity: 1;
+  position: absolute;
+  top: 2%;
+  transition: opacity, fill, var(--transition-delay);
   fill: var(--accent-color);
-  transition: fill var(--transition-delay);
+}
+.dark .sun {
+  opacity: 0;
 }

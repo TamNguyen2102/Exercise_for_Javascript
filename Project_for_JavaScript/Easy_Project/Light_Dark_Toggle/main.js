@@ -7,5 +7,10 @@ swapBtn.addEventListener("click", () => {
     getComputedStyle(container).getPropertyValue("--rotation")
   );
   container.style.setProperty("--rotation", rotation + 180);
-  console.log(getComputedStyle(container).getPropertyValue("--rotation"));
+
+  console.log(
+    "At rotation: " +
+      getComputedStyle(container).getPropertyValue("--rotation") +
+      "deg"
+  );
 });
