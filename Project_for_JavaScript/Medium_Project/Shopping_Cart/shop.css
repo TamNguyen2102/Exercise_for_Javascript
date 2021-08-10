@@ -77,7 +77,8 @@ header h1 {
 /* ----------------- */
 .item-section .card {
   height: 150px;
-  background-color: #afafaf;
+  background-color: #fff;
+
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -86,20 +87,27 @@ header h1 {
 .item-section .card-title {
   height: 20%;
   font-size: 1.2rem;
-  padding-bottom: 0.2rem;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
   border-bottom: 0.5px solid rgb(0, 0, 0, 0.3);
 }
 
 .item-section .card-text {
   height: 60%;
+  font-weight: lighter;
+  color: rgb(0, 0, 0, 0.5);
 }
 
 /* Price Area */
-.item-section .card .price-area {
+.item-section .price-area {
   height: 20%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.price-area .card-text {
+  color: black;
+  font-weight: 500;
 }
 
 .item button {
@@ -107,7 +115,6 @@ header h1 {
   outline: none;
   padding: 0.5rem 1rem;
   border-radius: 5px;
-  background-color: #552c85;
   color: #fff;
 }
 /* ------------- */
@@ -130,6 +137,7 @@ header h1 {
 /* Header row in cart  */
 .cart-row {
   width: 80%;
+  margin-bottom: 0.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
@@ -167,6 +175,9 @@ header h1 {
 .cart-row .price {
   align-self: center;
 }
+.cart-row .price::after {
+  content: "$";
+}
 
 /* Quantity column */
 .cart-row .quantity {
@@ -176,6 +187,9 @@ header h1 {
 
 .cart-row .quantity input {
   height: 40px;
-  width: 60px;
+  width: 50px;
   margin-right: 0.5rem;
+
+  border: none;
+  outline: none;
 }

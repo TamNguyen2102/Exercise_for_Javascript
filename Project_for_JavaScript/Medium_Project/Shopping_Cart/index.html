@@ -19,23 +19,46 @@
   </head>
   <body>
     <header>
-      <h1 class="bg-dark">Kookie House</h1>
+      <h1 class="bg-dark">Kookie Store</h1>
     </header>
 
     <!-- Item Section -->
     <section class="item-section">
       <!-- Item 1 -->
       <div class="item">
-        <img src="./images/Tshirt.webp" alt="BTS Water Bottle" />
+        <img
+          class="item-image"
+          src="./images/Tshirt.webp"
+          alt="BTS Water Bottle"
+        />
         <!-- Item information -->
-        <div class="card card-body text-light">
+        <div class="card card-body">
           <!-- Item's name and description for item -->
-          <h5 id="itemName" class="card-title">T-shirt</h5>
+          <h5 class="item-name card-title">T-shirt</h5>
           <p class="card-text">League of legends T-shirt</p>
           <!-- Item's price and button adding item to cart -->
           <div class="price-area">
-            <div id="itemPrice" class="card-text">10$</div>
-            <div id="addBtn" class="btn btn-primary">Add to cart</div>
+            <div class="item-price card-text">10</div>
+            <div class="add-button btn btn-primary">Add to cart</div>
+          </div>
+        </div>
+      </div>
+      <!-- Item 2 -->
+      <div class="item">
+        <img
+          class="item-image"
+          src="./images/bloodborne_figure.webp"
+          alt="BTS Water Bottle"
+        />
+        <!-- Item information -->
+        <div class="card card-body">
+          <!-- Item's name and description for item -->
+          <h5 class="item-name card-title">Bloodborne Figure</h5>
+          <p class="card-text">League of legends T-shirt</p>
+          <!-- Item's price and button adding item to cart -->
+          <div class="price-area">
+            <div class="item-price card-text">25</div>
+            <div class="add-button btn btn-primary">Add to cart</div>
           </div>
         </div>
       </div>
@@ -44,28 +67,27 @@
     <!-- Cart Section -->
     <div class="cart-section">
       <h2>Cart</h2>
+      <!-- Cart header -->
       <div class="cart-row">
-        <!-- Cart header -->
         <div class="header">Item</div>
         <div class="header">Price</div>
         <div class="header">Quantity</div>
       </div>
-      <div class="cart-row">
-        <!-- Cart Item -->
+      <!-- Cart Item -->
+      <div class="cart-row" data-item-row>
         <div class="item">
           <img src="./images/Tshirt.webp" alt="T-shirt" />
           <p>T-shirt</p>
         </div>
         <!-- Price area -->
-        <div class="price">25$</div>
+        <div class="price">10</div>
         <!-- Quantity zone -->
         <div class="quantity">
-          <input type="number" id="quantity" min="0" max="100" />
-          <div class="btn btn-danger">Remove</div>
+          <input type="number" id="quantity" value="1" min="1" max="100" />
+          <div class="remove-Btn btn btn-danger">Remove</div>
         </div>
       </div>
-
-      <div class="btn btn-primary">Purchase</div>
     </div>
+    <div class="btn btn-primary">Purchase</div>
   </body>
 </html>
