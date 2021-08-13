@@ -2,7 +2,7 @@ if (document.readyState == "loading") {
   document.addEventListener("DOMContentLoaded", ready);
 } else {
   ready();
-}
+} //Nomatter page is loading or not, always execute ready function
 
 function ready() {
   const addBtn = document.querySelectorAll(".add-button");
@@ -15,6 +15,11 @@ function ready() {
     button.addEventListener("click", removeItem);
     //button is the argument target of removeItem(target)
   });
+
+  const quantity = document.querySelectorAll(".quantity-value");
+  quantity.forEach((value) =>
+    value.addEventListener("change", quantityChanged)
+  );
 }
 
 //Add a Event for each 'Add to cart' button in item card
@@ -40,6 +45,7 @@ function addItemToCart(event) {
     //If there is no the same item in cart, begin to updateCart
     const cart = addToCart(itemImageSrc, itemName, itemPrice);
     updateCart(cart);
+    updateTotalCart();
   }
 }
 
@@ -84,10 +90,35 @@ function addToCart(itemImage, itemName, itemPrice) {
   return cart;
 }
 
+//Function whenever a quantity changed, notice it and call changePriceInrow()
+function quantityChanged(event) {
+  let input = event.target;
+  if (isNaN(input.value) || input.value <= 0) input.value = 1;
+  changePriceInRow();
+}
+
 //Function change quantity
-function changeQuantity() {
-  const quantityValue = parseInt(
-    document.querySelector(".quantity-value").value
-  );
-  console.log(quantityValue + 1);
+function changePriceInRow() {
+  const cartRow = document.querySelectorAll(".cart-row");
+  cartRow.forEach((row) => {
+    if (row.querySelector(".price") !== null) {
+      let price = row.querySelector(".price");
+      let quantity = parseInt(row.querySelector(".quantity-value").value);
+      price.innerHTML = parseFloat(price.textContent) * quantity;
+    }
+  });
+  updateTotalCart();
+}
+
+//Function update the total price in cart
+function updateTotalCart() {
+  const cartSection = document.querySelector(".cart-section");
+
+  const priceColumn = Array.from(cartSection.querySelectorAll(".price"));
+  priceColumn.forEach((price) => (price = price.textContent)); //Get the price value in column
+
+  const total = priceColumn.reduce((currentTotal, price) => {
+    return parseInt(price.textContent) + currentTotal;
+  }, 0);
+  console.log(total);
 }

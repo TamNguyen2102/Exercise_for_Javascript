@@ -124,10 +124,13 @@ header h1 {
   margin: 0.5rem 1rem;
   border-top: 1px solid black;
   padding: 2rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  position: relative;
 }
 .cart-section h2 {
   font-size: 3rem;
@@ -192,4 +195,21 @@ header h1 {
 
   border: none;
   outline: none;
+}
+
+/* --- Total price in cart --- */
+.total {
+  position: absolute;
+  left: 50%;
+  bottom: -5%;
+}
+.total::before {
+  content: "Total:";
+  font-size: 3rem;
+  font-weight: 700;
+}
+.total::after {
+  content: "$";
+  font-size: 3rem;
+  font-weight: 700;
 }
