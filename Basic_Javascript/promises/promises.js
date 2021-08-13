@@ -33,17 +33,17 @@ watchingCallBackTutorial()
 //Example 2
 function greeting() {
   return new Promise((resolve, reject) => {
-    resolve(() => {
-      console.log("Hello coding world");
-    });
+    resolve(text());
     reject("This is world");
   });
 }
 
+function text() {
+  console.log("This is text");
+}
+
 greeting()
-  .then((greetText) => {
-    greetText();
-  })
+  .then(text)
   .catch((error) => {
     console.log(error);
   });
