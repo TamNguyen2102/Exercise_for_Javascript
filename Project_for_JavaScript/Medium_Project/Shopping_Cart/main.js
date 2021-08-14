@@ -15,7 +15,7 @@ function ready() {
     button.addEventListener("click", removeItem);
     //button is the argument target of removeItem(target)
   });
-
+  updateTotalCart();
   const quantity = document.querySelectorAll(".quantity-value");
   quantity.forEach((value) =>
     value.addEventListener("change", quantityChanged)
@@ -75,12 +75,17 @@ function updateCart(cart) {
   // //Add a remove event for new item
   const removeBtn = cartRow.querySelectorAll(".remove-Btn");
   removeBtn.forEach((button) => button.addEventListener("click", removeItem));
+  const quantityNewRow = cartRow.querySelectorAll(".quantity-value");
+  quantityNewRow.forEach((quantity) =>
+    quantity.addEventListener("change", quantityChanged)
+  );
 }
 
 //Create an event for clicking remove button
 function removeItem(event) {
   const button = event.target;
   button.parentElement.parentElement.remove();
+  updateTotalCart();
 }
 
 //Function: Add image source, item name and item price into cart
@@ -94,31 +99,28 @@ function addToCart(itemImage, itemName, itemPrice) {
 function quantityChanged(event) {
   let input = event.target;
   if (isNaN(input.value) || input.value <= 0) input.value = 1;
-  changePriceInRow();
-}
-
-//Function change quantity
-function changePriceInRow() {
-  const cartRow = document.querySelectorAll(".cart-row");
-  cartRow.forEach((row) => {
-    if (row.querySelector(".price") !== null) {
-      let price = row.querySelector(".price");
-      let quantity = parseInt(row.querySelector(".quantity-value").value);
-      price.innerHTML = parseFloat(price.textContent) * quantity;
-    }
-  });
   updateTotalCart();
 }
 
 //Function update the total price in cart
 function updateTotalCart() {
   const cartSection = document.querySelector(".cart-section");
+  const cartRow = document.querySelectorAll(".cart-row");
+  const InRow = [];
+  cartRow.forEach((row) => {
+    const priceInRow = row.querySelector(".price");
+    const quantityInRow = row.querySelector(".quantity-value");
+    if (priceInRow !== null && quantityInRow !== null) {
+      InRow.push({
+        price: priceInRow.textContent,
+        quantity: quantityInRow.value,
+      });
+    }
+  });
 
-  const priceColumn = Array.from(cartSection.querySelectorAll(".price"));
-  priceColumn.forEach((price) => (price = price.textContent)); //Get the price value in column
-
-  const total = priceColumn.reduce((currentTotal, price) => {
-    return parseInt(price.textContent) + currentTotal;
+  const total = InRow.reduce((currentTotal, row) => {
+    return parseFloat(row.price) * parseInt(row.quantity) + currentTotal;
   }, 0);
-  console.log(total);
+
+  cartSection.querySelector(".total").textContent = total;
 }

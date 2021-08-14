@@ -202,14 +202,12 @@ header h1 {
   position: absolute;
   left: 50%;
   bottom: -5%;
+  font-size: 3rem;
+  font-weight: 700;
 }
 .total::before {
   content: "Total:";
-  font-size: 3rem;
-  font-weight: 700;
 }
 .total::after {
   content: "$";
-  font-size: 3rem;
-  font-weight: 700;
 }
