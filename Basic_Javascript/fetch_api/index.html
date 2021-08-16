@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+   
+    </style>
+    <script src="./script.js" defer></script>
+    <title>Fetch Api</title>
+  </head>
+  <body>
+    <button id="getText" class="btn btn-primary m-2">Get Text</button>
+    <button id="getUser" class="btn btn-primary m-2">Get Users</button>
+    <!-- Form -->
+    <form id="addPost" class="m-4">
+      <div>
+        <label class="form-label" for="title">Title of book:</label>
+        <input class="form-control" type="text" id="bookTitle" />
+      </div>
+
+      <div>
+        <label class="form-label" for="description">Description of book</label>
+        <textarea
+          name="bookDescription"
+          id="bookDescription"
+          cols="20"
+          rows="10"
+          class="form-control"
+        ></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <hr />
+    <div class="output list-group">This is output section</div>
+  </body>
+</html>
