@@ -1,0 +1,57 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: sans-serif;
+
+  background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
+  background-repeat: no-repeat;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Timezone */
+body .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .time-zone {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Temparature Degree */
+.temparature-degree {
+  height: 30%;
+  position: relative;
+
+  font-size: 3rem;
+  font-weight: 700;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.temparature-degree::after {
+  content: "\2103";
+  position: absolute;
+  right: -50px;
+  transform: translateY(-20%);
+
+  font-size: 2rem;
+}
