@@ -1,0 +1,76 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+/* =============================== */
+/* Container contain all booklist */
+/* ============================= */
+.main-section {
+  display: flex;
+  flex-direction: column;
+
+  margin: 1rem;
+  padding: 2rem;
+  height: 50vh;
+
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+/* ------- Header ------ */
+.main-section header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Image */
+.main-section header .book-image {
+  fill: #2b80fd;
+}
+/* Title */
+.main-section header .title strong {
+  color: #2b80fd;
+}
+
+/* ------ Form ------- */
+.book-form {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.book-form button {
+  margin: 1rem 0;
+}
+
+.book-form .form-control {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+/* Error Message */
+.error {
+  display: none;
+  color: red;
+}
+
+/* Output container */
+.output-container {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.output-table {
+  border: 1px solid black;
+}
