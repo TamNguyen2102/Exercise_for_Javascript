@@ -1,0 +1,112 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  letter-spacing: 0.4px;
+}
+
+body {
+  height: 100%;
+  background: linear-gradient(135deg, #f35656, #4c4af4) fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 450px;
+  padding: 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+
+  background-color: #fff;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.1);
+}
+
+section {
+  width: 100%;
+}
+
+/* One row in section */
+.container .wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 1.8rem;
+
+  color: #44475b;
+}
+
+/* Caption in wrapper */
+.wrapper .caption {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+/* Output in wrapper */
+.wrapper .output {
+  font-weight: 500;
+}
+
+/* --- Bill section --- */
+
+/* Total Amount */
+section .wrapper:nth-of-type(3) {
+  padding: 0.5rem 0 1.5rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+/* Bill output */
+.output-box {
+  padding: 0.2rem 1rem;
+  border-radius: 2px;
+
+  background: linear-gradient(90deg, #9780ee, #4c4af4);
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+.output-box input[type="number"] {
+  border: none;
+  outline: none;
+  width: 50px;
+
+  background-color: transparent;
+  color: #44475b;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* --- Amount section --- */
+/* input range */
+section input[type="range"] {
+  padding-top: 0.2rem;
+  width: 100%;
+}
+
+/* Summary Section */
+section:last-of-type {
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+
+  background: linear-gradient(90deg, #9780ee, #4c4af4);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+section:last-of-type .wrapper {
+  margin: 0.4rem;
+  color: #fff;
+}

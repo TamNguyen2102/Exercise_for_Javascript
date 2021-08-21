@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <!--Google Font-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./main.js" defer></script>
+    <title>Tip Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Bill Section -->
+      <section>
+        <!-- Bill -->
+        <div class="wrapper">
+          <label class="caption" for="bill">Bill</label>
+          <div class="output-box">
+            <span>$</span>
+            <input type="number" id="bill" value="0" min="0" />
+          </div>
+        </div>
+        <!-- Tip output -->
+        <div class="wrapper">
+          <div class="caption">Tip</div>
+          <div class="output"><span>$</span>0</div>
+        </div>
+        <!-- Total Amount -->
+        <div class="wrapper">
+          <div class="caption">Total Amount</div>
+          <div class="output"><span>$</span>0</div>
+        </div>
+      </section>
+
+      <!-- Amount Section -->
+      <section>
+        <!-- Tip% -->
+        <div class="wrapper">
+          <label for="tipPercent" class="caption">Tip %</label>
+          <div class="output">1<span>%</span></div>
+        </div>
+        <input type="range" id="tipPercent" />
+        <!-- No. of People -->
+        <div class="wrapper">
+          <label for="numberPeople" class="caption">No. Of People</label>
+          <div class="output">1<span>%</span></div>
+        </div>
+        <input id="numberPeople" type="range" />
+      </section>
+
+      <!-- Summary Section -->
+      <section>
+        <!-- Tip Per Person summary -->
+        <div class="wrapper">
+          <div class="caption">Tip Per Person</div>
+          <div class="output"><span>$</span>0</div>
+        </div>
+        <!-- Total Per person -->
+        <div class="wrapper">
+          <div class="caption">Total Per Person</div>
+          <div class="output"><span>$</span>0</div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
