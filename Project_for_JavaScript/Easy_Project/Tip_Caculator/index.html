@@ -22,18 +22,18 @@
           <label class="caption" for="bill">Bill</label>
           <div class="output-box">
             <span>$</span>
-            <input type="number" id="bill" value="0" min="0" />
+            <input type="number" id="bill" value="1" min="0" />
           </div>
         </div>
         <!-- Tip output -->
         <div class="wrapper">
           <div class="caption">Tip</div>
-          <div class="output"><span>$</span>0</div>
+          <div id="tip" class="output"><span>$</span>0</div>
         </div>
         <!-- Total Amount -->
         <div class="wrapper">
           <div class="caption">Total Amount</div>
-          <div class="output"><span>$</span>0</div>
+          <div id="total" class="output"><span>$</span>0</div>
         </div>
       </section>
 
@@ -42,15 +42,15 @@
         <!-- Tip% -->
         <div class="wrapper">
           <label for="tipPercent" class="caption">Tip %</label>
-          <div class="output">1<span>%</span></div>
+          <div class="output amount">1<span>%</span></div>
         </div>
-        <input type="range" id="tipPercent" />
+        <input type="range" id="tipPercent" value="1" max="50" />
         <!-- No. of People -->
         <div class="wrapper">
           <label for="numberPeople" class="caption">No. Of People</label>
-          <div class="output">1<span>%</span></div>
+          <div class="output amount">1</div>
         </div>
-        <input id="numberPeople" type="range" />
+        <input id="numberPeople" type="range" value="1" min="1" />
       </section>
 
       <!-- Summary Section -->
@@ -58,12 +58,12 @@
         <!-- Tip Per Person summary -->
         <div class="wrapper">
           <div class="caption">Tip Per Person</div>
-          <div class="output"><span>$</span>0</div>
+          <div id="tipPerPerson" class="output"><span>$</span>0</div>
         </div>
         <!-- Total Per person -->
         <div class="wrapper">
           <div class="caption">Total Per Person</div>
-          <div class="output"><span>$</span>0</div>
+          <div id="totalPerPerson" class="output"><span>$</span>0</div>
         </div>
       </section>
     </div>
