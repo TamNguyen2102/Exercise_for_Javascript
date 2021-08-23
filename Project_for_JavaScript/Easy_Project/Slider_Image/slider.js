@@ -54,11 +54,7 @@ class UI {
 }
 
 // Event Click Slider
-
 document.querySelector("#leftBtn").addEventListener("click", UI.slideToLeft);
 document.querySelector("#rightBtn").addEventListener("click", UI.slideToRight);
-// document
-// .querySelector(".slide")
-// .addEventListener("transitionend", UI.duplicateSlide);
 
 setInterval(UI.slideToRight, 5000);

@@ -50,7 +50,6 @@ body.four {
 
 .slide {
   display: flex;
-  transition: transform 500ms ease-in;
 }
 
 .slide img {
