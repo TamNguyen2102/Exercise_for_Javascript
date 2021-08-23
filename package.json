@@ -1,0 +1,19 @@
+{
+  "name": "exercise_for_javascript",
+  "version": "1.0.0",
+  "description": "Clone the reddit search",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TamNguyen2102/Exercise_for_Javascript.git"
+  },
+  "author": "Tam_Nguyen_2102",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TamNguyen2102/Exercise_for_Javascript/issues"
+  },
+  "homepage": "https://github.com/TamNguyen2102/Exercise_for_Javascript#readme"
+}
