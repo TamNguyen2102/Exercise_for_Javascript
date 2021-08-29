@@ -1,3 +1,5 @@
+import Dashboard from "./views/Dashboard.js";
+
 const navigateTo = (url) => {
   history.pushState(null, null, url);
   router();
@@ -8,16 +10,16 @@ const router = async () => {
     {
       // Wheneveer a path go to root, view the hanlder
       path: "/",
-      view: () => console.log("Viewing Dashboard"),
+      view: Dashboard,
     },
-    {
-      path: "/posts",
-      view: () => console.log("Viewing Posts"),
-    },
-    {
-      path: "/settings",
-      view: () => console.log("Viewing Settings"),
-    },
+    // {
+    //   path: "/posts",
+    //   view: () => console.log("Viewing Posts"),
+    // },
+    // {
+    //   path: "/settings",
+    //   view: () => console.log("Viewing Settings"),
+    // },
   ];
 
   // Test each route for potential match
@@ -38,12 +40,15 @@ const router = async () => {
     };
   }
 
-  console.log(match.route.view());
+  const view = new match.route.view();
+
+  document.querySelector("#app").innerHTML = await view.getHtml();
 };
 
 window.addEventListener("popstate", router);
 
 document.addEventListener("DOMContentLoaded", () => {
+  debugger;
   document.body.addEventListener("click", (e) => {
     if (e.target.matches("[data-link]")) {
       e.preventDefault();
