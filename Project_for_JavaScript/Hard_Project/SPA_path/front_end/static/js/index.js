@@ -1,6 +1,7 @@
 import Dashboard from "./views/Dashboard.js";
 import Posts from "./views/Posts.js";
 import Settings from "./views/Settings.js";
+import UI from "./views/UI.js";
 
 const navigateTo = (url) => {
   history.pushState(null, null, url);
@@ -40,10 +41,12 @@ const router = async () => {
       isMatch: true,
     };
   }
-
   const view = new match.route.view();
-
   document.querySelector("#content").innerHTML = await view.getHtml();
+
+  // Focus the navbar item
+
+  UI.prototype.focusNavItem(match.route.path);
 };
 
 // Set previous routing
