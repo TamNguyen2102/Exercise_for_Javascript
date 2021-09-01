@@ -1,8 +1,8 @@
 // Hover navbar
 export default class UI {
   focusNavItem(path) {
+    const navItems = Array.from(document.querySelector(".navbar").children);
     navItems.forEach((item) => {
-      debugger;
       const href = item.getAttribute("href");
       item.classList.remove("navbar-item");
 
