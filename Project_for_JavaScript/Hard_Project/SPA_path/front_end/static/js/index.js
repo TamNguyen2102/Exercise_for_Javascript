@@ -44,8 +44,7 @@ const router = async () => {
   const view = new match.route.view();
   document.querySelector("#content").innerHTML = await view.getHtml();
 
-  // Focus the navbar item
-
+  // UI: Focus the navbar item
   UI.prototype.focusNavItem(match.route.path);
 };
 
